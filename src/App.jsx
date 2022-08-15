@@ -1,11 +1,11 @@
-
 import './App.scss'
+import Tabla from './components/Tabla'
 
 function App() {
 
   return (
     <div className="App">
-      <h1>prueba</h1>
+      <Tabla/>
     </div>
   )
 }
