@@ -5,17 +5,31 @@ export const datosSlice = createSlice({
   name: "datos",
   initialState: {
     list: [],
+    pagina: 10,
   },
   reducers: {
     setList: (state, action) => {
         state.list = action.payload;
-    }
+    },
+    subirPagina: (state) => {
+      if(state.pagina >= 100){
+        return
+      }
+        state.pagina += 10;
+    },
+    disminuirPagina: (state) => {
+      if(state.pagina <= 10){
+        console.log('first')
+        return
+      }
+        state.pagina -= 10;
+    },
   },
 });
 
 export default datosSlice.reducer;
 
-export const { setList } = datosSlice.actions;
+export const { setList, subirPagina, disminuirPagina } = datosSlice.actions;
 
 export const fetchAllList = () => (dispatch) => {
   axios
@@ -25,3 +39,6 @@ export const fetchAllList = () => (dispatch) => {
     })
     .catch((error) => console.log(error));
 };
+
+
+
