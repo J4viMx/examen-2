@@ -70,11 +70,13 @@ const Tabla = () => {
                 </tbody>
             </table>
 
-            <p>Total de datos: {list.length}</p>
+            <p className="total-datos">Total de datos: {list.length}</p>
 
-            <button onClick={ e => {dispatch(disminuirPagina())} }>Anterior</button>
-            
-            <button onClick={ e => {dispatch(subirPagina())} }>Siguiente</button>
+            <div className="contendorBotones">
+                <button onClick={ e => {dispatch(disminuirPagina())} }>Anterior</button>
+                
+                <button onClick={ e => {dispatch(subirPagina())} }>Siguiente</button>
+            </div>
 
             {modal && <Modal dataModal={dataModal}/>}
 
