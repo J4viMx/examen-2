@@ -12,7 +12,7 @@ const Modal = ({dataModal}) => {
         <div className="modal" onClick={() => {dispatch(setModal())}}>
 
             <div className="contenido">
-                <p>id = {dataModal?.id}</p>
+                <p>id = {dataModal?._id}</p>
                 <p>validdateutc = {dataModal?.validdateutc}</p>
                 <p>winddirectioncardinal = {dataModal?.winddirectioncardinal}</p>
                 <p>probabilityofprecip = {dataModal?.probabilityofprecip}</p>
