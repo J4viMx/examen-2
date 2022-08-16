@@ -6,6 +6,7 @@ export const datosSlice = createSlice({
   initialState: {
     list: [],
     pagina: 10,
+    modal: false
   },
   reducers: {
     setList: (state, action) => {
@@ -24,12 +25,15 @@ export const datosSlice = createSlice({
       }
         state.pagina -= 10;
     },
+    setModal: (state) => {
+      state.modal = !state.modal
+    }
   },
 });
 
 export default datosSlice.reducer;
 
-export const { setList, subirPagina, disminuirPagina } = datosSlice.actions;
+export const { setList, subirPagina, disminuirPagina, setModal } = datosSlice.actions;
 
 export const fetchAllList = () => (dispatch) => {
   axios
